@@ -1,3 +1,5 @@
+
+
 @mixin set-size($width, $height) {
     width: $width;
     height: $height;
@@ -17,4 +19,10 @@
     @if $gap != null {
         gap: $gap;
     }
+}
+
+@mixin text-properties($color, $font-size, $font-weight) {
+    color: $color;
+    font-size: $font-size;
+    font-weight: $font-weight;
 }

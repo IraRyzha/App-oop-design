@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+  max-width: 1300px;
+  margin: 0 auto;
+  height: 2000px;
+  background-color: rgb(148, 255, 255);
+}
+
+header {
+  width: 100%;
+  height: auto;
+}
+header nav {
+  width: 100%;
+  height: auto;
+}
+header nav ul {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+}
+header nav ul li {
+  flex: 1;
+}
+header nav ul li img {
+  height: 45px;
+}
+header nav ul li span.current-date {
+  color: #2464ec;
+  font-weight: 300;
+  font-size: 13px;
+}
+header nav ul li a.get-tickets {
+  display: block;
+  padding: 12px 17px;
+  background-color: #2464ec;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  border-radius: 12px;
+}
+header nav ul li a.get-tickets:hover {
+  transform: scale(1.03);
+}
+header div.title {
+  width: 100%;
+  height: auto;
+  padding: 80px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(206, 206, 206);
+}
+header div.title h1 {
+  width: 65%;
+  font-size: 65px;
+  font-weight: 800;
+  background-color: #2464ec;
+}
+
+/*# sourceMappingURL=styles.css.map */

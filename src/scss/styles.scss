@@ -1,0 +1,83 @@
+@use 'config' as *;
+
+
+body {
+    margin: 0;
+    padding: 0;
+    @include set-size(100%, auto);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    @include set-size(100%, auto);
+    max-width: 1300px;
+    margin: 0 auto;
+    height: 2000px;
+    background-color: rgb(148, 255, 255);
+}
+
+header {
+    @include set-size(100%, auto);
+
+    nav {
+        @include set-size(100%, auto);
+        ul {
+            @include set-size(100%, auto);
+            @include flex-container(row, space-between, center);
+            padding: 20px 0px;
+
+            li {
+                flex: 1;
+                img {
+                    height: 45px;
+                }
+        
+                span.current-date {
+                    color: $main-blue;
+                    font-weight: 300;
+                    font-size: 13px;
+                }
+        
+                a.get-tickets {
+                    display: block;
+                    padding: 12px 17px;
+                    background-color: $main-blue;
+                    color: white;
+                    font-weight: 600;
+                    font-size: 15px;
+                    border: none;
+                    border-radius: 12px;
+                    &:hover {
+                        transform: scale(1.03);
+                    }
+                }
+            }
+        }
+    }
+
+    div.title {
+        @include set-size(100%, auto);
+        padding: 80px 0px;
+        @include flex-container(column, center, center);
+        background-color: rgb(206, 206, 206);
+
+        h1 {
+            width: 65%;
+            font-size: 65px;
+            font-weight: 800;
+            background-color: $main-blue;
+        }
+
+    }
+}
+

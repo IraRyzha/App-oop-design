@@ -20,28 +20,33 @@ a {
 .container {
   width: 100%;
   height: auto;
-  max-width: 1300px;
+  max-width: 1250px;
   margin: 0 auto;
 }
 
 div.background-area {
-  width: 100%;
-  height: auto;
-}
-div.background-area:first-child {
+  width: 140%;
+  height: 100%;
+  position: absolute;
   z-index: -100;
   background-color: #eef2fe;
   background-image: url(../images/background.6c3571e0.jpg);
-  background-size: 700px;
   background-repeat: no-repeat;
-  background-position: top -41px right -156px;
-  transform: scaleX(-1);
+  background-size: 700px;
+  box-shadow: 1px 20px 120px 110px rgba(238, 242, 254, 0.9);
 }
 
 header {
   width: 100%;
   height: auto;
   border-bottom: 10px solid linear-gradient(90deg, rgb(238, 242, 254) 0%, rgb(255, 255, 255) 79%);
+  position: relative;
+}
+header div.background-area {
+  top: 0;
+  left: -20%;
+  transform: scaleX(-1);
+  background-position: top -41px right -151px;
 }
 header nav {
   width: 100%;
@@ -85,7 +90,6 @@ header div.title {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid black;
 }
 header div.title h1 {
   width: 65%;
@@ -124,7 +128,6 @@ main div.text {
   width: 45%;
   height: auto;
   padding: 20px 0px 20px;
-  border: 2px solid black;
 }
 main div.text p {
   color: #193b93;
@@ -137,11 +140,40 @@ main section.speakers {
   display: flex;
   flex-direction: row;
   align-items: center;
+  border: 2px solid black;
 }
 main section.speakers aside.mini-calendar {
   width: 30%;
   height: auto;
-  border: 2px solid black;
+}
+main section.speakers aside.mini-calendar ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+  position: relative;
+}
+main section.speakers aside.mini-calendar ul::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: rgb(171, 171, 171);
+}
+main section.speakers aside.mini-calendar ul li {
+  padding-left: 25px;
+  position: relative;
+}
+main section.speakers aside.mini-calendar ul li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  background-color: rgb(171, 171, 171);
+  transform: rotate(90deg);
 }
 main section.speakers ul.speakers-list {
   width: 70%;
@@ -151,7 +183,6 @@ main section.speakers ul.speakers-list {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  border: 2px solid black;
 }
 main section.speakers ul.speakers-list li {
   width: 30%;
@@ -165,7 +196,6 @@ main div.text2 {
   justify-content: center;
   align-items: center;
   padding: 100px 0px 40px;
-  border: 2px solid black;
 }
 main div.text2 h2 {
   width: 70%;
@@ -192,8 +222,13 @@ main ul.calendar {
   justify-content: space-between;
   align-items: flex-start;
   gap: 20px;
+  position: relative;
   padding: 30px 0px;
-  border: 2px solid black;
+}
+main ul.calendar div.background-area {
+  top: 0;
+  left: -20%;
+  background-position: top -41px right -151px;
 }
 main ul.calendar li {
   width: 32%;
@@ -216,7 +251,7 @@ main ul.calendar li ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: gray;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 main ul.calendar li ul li {
   width: 70%;
@@ -248,8 +283,8 @@ main ul.calendar li ul li:not(:last-child)::after {
   content: "";
   display: block;
   width: 70%;
-  height: 1px;
-  background-color: white;
+  height: 0.8px;
+  background-color: rgb(210, 210, 210);
   position: absolute;
   bottom: -20px;
   left: 0;
@@ -265,7 +300,6 @@ main section.sponsorship {
   align-items: center;
   text-align: center;
   padding: 70px 0px;
-  border: 2px solid black;
 }
 main section.sponsorship h2 {
   width: 65%;
@@ -297,9 +331,18 @@ main section.sing-up {
   justify-content: center;
   align-items: center;
   gap: 40px;
+  position: relative;
   padding: 120px 0px;
+  border: 8px solid white;
   border-radius: 25px;
-  border: 2px solid black;
+}
+main section.sing-up div.background-area {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-position: top -485px right 290px;
+  box-shadow: none;
 }
 main section.sing-up div {
   width: 35%;
@@ -370,7 +413,7 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 35px 0px;
+  padding: 45px 0px;
 }
 footer img {
   height: 45px;

@@ -21,29 +21,33 @@ a {
 
 .container {
     @include set-size(100%, auto);
-    max-width: 1300px;
+    max-width: 1250px;
     margin: 0 auto;
 }
 
 div.background-area {
-    @include set-size(100%, auto);
-    &:first-child {
-        z-index: -100;
-        background-color: $background-area;
-        background-image: url(../images/background.6c3571e0.jpg);
-        background-size: 700px ;
-        background-repeat: no-repeat;
-        background-position: top -41px right -156px;
-        // transform: rotateY(180deg);
-        transform: scaleX(-1);
-    }
-
+    @include set-size(140%, 100%);
+    position: absolute;
+    z-index: -100;
+    background-color: $background-area;
+    background-image: url(../images/background.6c3571e0.jpg);
+    background-repeat: no-repeat;
+    background-size: 700px;
+    box-shadow: 1px 20px 120px 110px rgba($background-area, .9);
 }
+
 
 header {
     @include set-size(100%, auto);
     border-bottom: 10px solid linear-gradient(90deg, rgba(238,242,254,1) 0%, rgba(255,255,255,1) 79%);
+    position: relative;
 
+    div.background-area {
+        top: 0;
+        left: -20%;
+        transform: scaleX(-1);
+        background-position: top -41px right -151px;
+    }
     nav {
         @include set-size(100%, auto);
         ul {
@@ -79,7 +83,6 @@ header {
         @include set-size(100%, auto);
         padding: 100px 0px;
         @include flex-container(column, center, center);
-        border: 2px solid black;
 
         h1 {
             width: 65%;
@@ -110,7 +113,6 @@ main {
     div.text {
         @include set-size(45%, auto);
         padding: 20px 0px 20px;
-        border: 2px solid black;
         
         p {
             @include text-properties($dark-blue, 22px, 500);
@@ -120,17 +122,40 @@ main {
     section.speakers {
         @include set-size(100%, auto);
         @include flex-container(row, null, center);
+        border: 2px solid black;
 
         aside.mini-calendar {
             @include set-size(30%, auto);
-            border: 2px solid black;
+            // border: 2px solid black;
+            ul {
+                @include flex-container(column, start, start, 20px);
+                position: relative;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    @include set-size(2px, 100%);
+                    background-color: $gray;
+                }
+                li {
+                    padding-left: 25px;
+                    position: relative;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: -4px;
+                        @include set-size(8px, 8px);
+                        background-color: $gray;
+                        transform: rotate(90deg);
+                    }
+                }
+            }
         }
 
         ul.speakers-list {
             @include set-size(70%, auto);
             @include flex-container(row, space-between, center);
             flex-wrap: wrap;
-            border: 2px solid black;
 
             li {
                 @include set-size(30%, auto);
@@ -142,7 +167,6 @@ main {
         @include set-size(100%, auto);
         @include flex-container(column, center, center);
         padding: 100px 0px 40px;
-        border: 2px solid black;
         h2 {
             @include set-size(70%, auto);
             @include text-properties($main-blue, 43px, 700);
@@ -159,12 +183,16 @@ main {
     ul.calendar { 
         @include set-size(100%, auto);
         @include flex-container(row, space-between, flex-start, 20px);
+        position: relative;
         padding: 30px 0px;
-        border: 2px solid black;
-        
+
+        div.background-area {
+            top: 0;
+            left: -20%;
+            background-position: top -41px right -151px;
+        }
         li {
             @include set-size(32%, auto);
-            // background-color: $white;
 
             h3 {
                 @include text-properties($dark-blue, 31px, 700);
@@ -176,7 +204,7 @@ main {
             ul {
                 @include set-size(100%, auto);
                 @include flex-container(column, center, center);
-                background-color: gray;
+                background-color: rgba($white, .5);
 
                 li {
                     @include set-size(70%, auto);
@@ -199,8 +227,8 @@ main {
                     &:not(:last-child)::after {
                         content: '';
                         display: block;
-                        @include set-size(70%, 1px);
-                        background-color: $white;
+                        @include set-size(70%, .8px);
+                        background-color: $light-gray;
                         position: absolute;
                         bottom: -20px;
                         left: 0;
@@ -217,7 +245,6 @@ main {
         @include flex-container(column, center, center);
         text-align: center;
         padding: 70px 0px;
-        border: 2px solid black;
         h2 {
             @include set-size(65%, auto);
             @include text-properties($dark-blue, 43px, 700);
@@ -237,10 +264,19 @@ main {
     section.sing-up {
         @include set-size(100%, auto);
         @include flex-container(row, center, center, 40px);
+        position: relative;
         padding: 120px 0px;
+        border: 8px solid $white;
         border-radius: 25px;
-        border: 2px solid black;
 
+        div.background-area {
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-position: top -485px right 290px;
+            box-shadow: none;
+        }
         div {
             @include set-size(35%, auto);
             @include flex-container(column, center);
@@ -268,7 +304,6 @@ main {
             }
 
             form.input {
-                // @include set-size(100%, auto);
                 @include flex-container(row, space-between, center);
                 background-color: $white;
                 padding: 15px 25px;
@@ -295,7 +330,7 @@ main {
 footer {
     @include set-size(100%, auto);
     @include flex-container(row, space-between, center);
-    padding: 35px 0px;
+    padding: 45px 0px;
     img {
         height: 45px;
     }

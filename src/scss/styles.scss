@@ -1,5 +1,5 @@
 @use 'config' as *;
-
+ 
 
 body {
     margin: 0;
@@ -8,41 +8,26 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     position: relative;
 }
-
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
-
 a {
     text-decoration: none;
 }
-
 .container {
     @include set-size(100%, auto);
-    max-width: 1250px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-div.background-area {
-    @include set-size(140%, 100%);
-    position: absolute;
-    z-index: -100;
-    background-color: $background-area;
-    background-image: url(../images/background.6c3571e0.jpg);
-    background-repeat: no-repeat;
-    background-size: 700px;
-    box-shadow: 1px 20px 120px 110px rgba($background-area, .9);
-}
-
-
 header {
     @include set-size(100%, auto);
-    border-bottom: 10px solid linear-gradient(90deg, rgba(238,242,254,1) 0%, rgba(255,255,255,1) 79%);
     position: relative;
 
     div.background-area {
+        @include background-area();
         top: 0;
         left: -20%;
         transform: scaleX(-1);
@@ -53,7 +38,7 @@ header {
         ul {
             @include set-size(100%, auto);
             @include flex-container(row, space-between, center);
-            padding: 20px 0px;
+            padding: 25px 0px;
 
             li {
                 img {
@@ -81,7 +66,7 @@ header {
 
     div.title {
         @include set-size(100%, auto);
-        padding: 100px 0px;
+        padding: 110px 0px;
         @include flex-container(column, center, center);
 
         h1 {
@@ -112,7 +97,7 @@ main {
 
     div.text {
         @include set-size(45%, auto);
-        padding: 20px 0px 20px;
+        padding: 35px 0px 65px;
         
         p {
             @include text-properties($dark-blue, 22px, 500);
@@ -121,14 +106,14 @@ main {
 
     section.speakers {
         @include set-size(100%, auto);
-        @include flex-container(row, null, center);
-        border: 2px solid black;
+        @include flex-container(row, space-between, center);
+        border: 2px dotted black;
 
         aside.mini-calendar {
-            @include set-size(30%, auto);
-            // border: 2px solid black;
+            @include set-size(20%, auto);
+            align-self: flex-start;
             ul {
-                @include flex-container(column, start, start, 20px);
+                @include flex-container(column, start, start, 15px);
                 position: relative;
                 &::before {
                     content: '';
@@ -137,7 +122,7 @@ main {
                     background-color: $gray;
                 }
                 li {
-                    padding-left: 25px;
+                    padding-left: 20px;
                     position: relative;
                     &::after {
                         content: '';
@@ -148,17 +133,52 @@ main {
                         background-color: $gray;
                         transform: rotate(90deg);
                     }
+                    &:first-child::after {
+                        color: $main-blue;
+                    }
+                    &:first-of-type span {
+                        color: $main-blue;
+                    }
+                    span {
+                        @include text-properties($gray, 14px, 400);
+                    }
+                    h3 {
+                        @include text-properties($dark-blue, 16px, 600);
+                    }
                 }
             }
         }
 
         ul.speakers-list {
-            @include set-size(70%, auto);
-            @include flex-container(row, space-between, center);
+            @include set-size(78%, auto);
+            @include flex-container(row, flex-end, center, 25px);
             flex-wrap: wrap;
 
             li {
                 @include set-size(30%, auto);
+                margin-bottom: 10px;
+                figure {
+                    @include set-size(80%, auto);
+                    margin: 0;
+                    img {
+                        @include set-size(100%, auto);
+                        margin-bottom: 20px;
+                        border-radius: 25px;
+                    }
+                    figcaption {
+                        @include set-size(100%, auto);
+                        h4 {
+                            @include text-properties($black, 16px, 600);
+                            margin: 0px 0px 5px;
+                        }
+                        p {
+                            @include text-properties($gray, 13px, 400);
+                            margin: 0;
+                            overflow: hidden;
+                            white-space: nowrap;
+                        }
+                    }
+                }
             }
         }
     }
@@ -187,6 +207,7 @@ main {
         padding: 30px 0px;
 
         div.background-area {
+            @include background-area();
             top: 0;
             left: -20%;
             background-position: top -41px right -151px;
@@ -244,7 +265,7 @@ main {
         @include set-size(100%, auto);
         @include flex-container(column, center, center);
         text-align: center;
-        padding: 70px 0px;
+        padding: 100px 0px;
         h2 {
             @include set-size(65%, auto);
             @include text-properties($dark-blue, 43px, 700);
@@ -270,6 +291,7 @@ main {
         border-radius: 25px;
 
         div.background-area {
+            @include background-area();
             height: 100%;
             width: 100%;
             top: 0;
@@ -330,7 +352,7 @@ main {
 footer {
     @include set-size(100%, auto);
     @include flex-container(row, space-between, center);
-    padding: 45px 0px;
+    padding: 65px 0px 47px;
     img {
         height: 45px;
     }

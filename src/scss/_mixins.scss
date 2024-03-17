@@ -1,4 +1,4 @@
-
+@use 'variables' as *;
 
 @mixin set-size($width, $height) {
     width: $width;
@@ -25,4 +25,15 @@
     color: $color;
     font-size: $font-size;
     font-weight: $font-weight;
+}
+
+@mixin background-area() {
+    @include set-size(140%, 100%);
+    position: absolute;
+    z-index: -100;
+    background-color: $background-area;
+    background-image: url(../images/background.6c3571e0.jpg);
+    background-repeat: no-repeat;
+    background-size: 700px;
+    box-shadow: 1px 20px 120px 110px rgba($background-area, .9);
 }

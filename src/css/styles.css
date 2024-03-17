@@ -20,11 +20,16 @@ a {
 .container {
   width: 100%;
   height: auto;
-  max-width: 1250px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-div.background-area {
+header {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+header div.background-area {
   width: 140%;
   height: 100%;
   position: absolute;
@@ -34,15 +39,6 @@ div.background-area {
   background-repeat: no-repeat;
   background-size: 700px;
   box-shadow: 1px 20px 120px 110px rgba(238, 242, 254, 0.9);
-}
-
-header {
-  width: 100%;
-  height: auto;
-  border-bottom: 10px solid linear-gradient(90deg, rgb(238, 242, 254) 0%, rgb(255, 255, 255) 79%);
-  position: relative;
-}
-header div.background-area {
   top: 0;
   left: -20%;
   transform: scaleX(-1);
@@ -59,7 +55,7 @@ header nav ul {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0px;
+  padding: 25px 0px;
 }
 header nav ul li img {
   height: 45px;
@@ -85,7 +81,7 @@ header nav ul li a.get-tickets:hover {
 header div.title {
   width: 100%;
   height: auto;
-  padding: 100px 0px;
+  padding: 110px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -127,7 +123,7 @@ main {
 main div.text {
   width: 45%;
   height: auto;
-  padding: 20px 0px 20px;
+  padding: 35px 0px 65px;
 }
 main div.text p {
   color: #193b93;
@@ -139,19 +135,21 @@ main section.speakers {
   height: auto;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  border: 2px solid black;
+  border: 2px dotted black;
 }
 main section.speakers aside.mini-calendar {
-  width: 30%;
+  width: 20%;
   height: auto;
+  align-self: flex-start;
 }
 main section.speakers aside.mini-calendar ul {
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  gap: 20px;
+  gap: 15px;
   position: relative;
 }
 main section.speakers aside.mini-calendar ul::before {
@@ -162,7 +160,7 @@ main section.speakers aside.mini-calendar ul::before {
   background-color: rgb(171, 171, 171);
 }
 main section.speakers aside.mini-calendar ul li {
-  padding-left: 25px;
+  padding-left: 20px;
   position: relative;
 }
 main section.speakers aside.mini-calendar ul li::after {
@@ -175,18 +173,65 @@ main section.speakers aside.mini-calendar ul li::after {
   background-color: rgb(171, 171, 171);
   transform: rotate(90deg);
 }
+main section.speakers aside.mini-calendar ul li:first-child::after {
+  color: #2464ec;
+}
+main section.speakers aside.mini-calendar ul li:first-of-type span {
+  color: #2464ec;
+}
+main section.speakers aside.mini-calendar ul li span {
+  color: rgb(171, 171, 171);
+  font-size: 14px;
+  font-weight: 400;
+}
+main section.speakers aside.mini-calendar ul li h3 {
+  color: #193b93;
+  font-size: 16px;
+  font-weight: 600;
+}
 main section.speakers ul.speakers-list {
-  width: 70%;
+  width: 78%;
   height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  gap: 25px;
   flex-wrap: wrap;
 }
 main section.speakers ul.speakers-list li {
   width: 30%;
   height: auto;
+  margin-bottom: 10px;
+}
+main section.speakers ul.speakers-list li figure {
+  width: 80%;
+  height: auto;
+  margin: 0;
+}
+main section.speakers ul.speakers-list li figure img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 25px;
+}
+main section.speakers ul.speakers-list li figure figcaption {
+  width: 100%;
+  height: auto;
+}
+main section.speakers ul.speakers-list li figure figcaption h4 {
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0px 0px 5px;
+}
+main section.speakers ul.speakers-list li figure figcaption p {
+  color: rgb(171, 171, 171);
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
 }
 main div.text2 {
   width: 100%;
@@ -226,6 +271,15 @@ main ul.calendar {
   padding: 30px 0px;
 }
 main ul.calendar div.background-area {
+  width: 140%;
+  height: 100%;
+  position: absolute;
+  z-index: -100;
+  background-color: #eef2fe;
+  background-image: url(../images/background.6c3571e0.jpg);
+  background-repeat: no-repeat;
+  background-size: 700px;
+  box-shadow: 1px 20px 120px 110px rgba(238, 242, 254, 0.9);
   top: 0;
   left: -20%;
   background-position: top -41px right -151px;
@@ -299,7 +353,7 @@ main section.sponsorship {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 70px 0px;
+  padding: 100px 0px;
 }
 main section.sponsorship h2 {
   width: 65%;
@@ -337,6 +391,15 @@ main section.sing-up {
   border-radius: 25px;
 }
 main section.sing-up div.background-area {
+  width: 140%;
+  height: 100%;
+  position: absolute;
+  z-index: -100;
+  background-color: #eef2fe;
+  background-image: url(../images/background.6c3571e0.jpg);
+  background-repeat: no-repeat;
+  background-size: 700px;
+  box-shadow: 1px 20px 120px 110px rgba(238, 242, 254, 0.9);
   height: 100%;
   width: 100%;
   top: 0;
@@ -413,7 +476,7 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 45px 0px;
+  padding: 65px 0px 47px;
 }
 footer img {
   height: 45px;

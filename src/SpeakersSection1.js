@@ -1,4 +1,4 @@
-import { Speakers } from "./Speakers";
+import { Speakers } from "./Speakers"; 
 
 export default class SpeakersSection1 extends Speakers {
     constructor(url, speakersListClass) {
@@ -21,7 +21,7 @@ export default class SpeakersSection1 extends Speakers {
 
             speakersItem.innerHTML = `
                 <figure>
-                    <img src="${photoUrl}" alt="">
+                    <img src="${photoUrl}">
                     <figcaption>
                         <h4>${speakers[i].name}</h4>
                         <p>${speakers[i].job}</p>

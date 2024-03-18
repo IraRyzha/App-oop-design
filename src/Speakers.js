@@ -1,4 +1,4 @@
-export class Speakers {
+export class Speakers { 
     constructor(url, speakersListClass) {
         this.url = url;
         this.speakersListClass = speakersListClass;
@@ -22,21 +22,6 @@ export class Speakers {
             return accumulator;
         }, []);
         return updateSpeakers;
-    }
-
-    async renderSpeakers(size) {
-        const response = await this.getSpeakers();
-        const speakers = this.createSpeakersMainInfo(response);
-        const speakersList = document.querySelector(`.${speakersListClass}`);
-
-        for(let i = 0; i < size; i++) {
-            const speakersItem = document.createElement('li');
-            
-            speakersItem.innerHTML = ` ${speakers[i]} `;
-        
-            speakersList.append(speakersItem);
-        }
-        
     }
 }
 

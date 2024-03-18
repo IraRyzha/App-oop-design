@@ -4,7 +4,6 @@ body {
   width: 100%;
   height: auto;
   font-family: Arial, Helvetica, sans-serif;
-  position: relative;
 }
 
 ul {
@@ -81,11 +80,11 @@ header nav ul li a.get-tickets:hover {
 header div.title {
   width: 100%;
   height: auto;
-  padding: 110px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 110px 0px;
 }
 header div.title h1 {
   width: 65%;
@@ -167,14 +166,11 @@ main section.speakers aside.mini-calendar ul li::after {
   content: "";
   position: absolute;
   top: 0;
-  left: -4px;
+  left: -3px;
   width: 8px;
   height: 8px;
   background-color: rgb(171, 171, 171);
-  transform: rotate(90deg);
-}
-main section.speakers aside.mini-calendar ul li:first-child::after {
-  color: #2464ec;
+  transform: rotate(180deg);
 }
 main section.speakers aside.mini-calendar ul li:first-of-type span {
   color: #2464ec;
@@ -198,6 +194,9 @@ main section.speakers ul.speakers-list {
   align-items: center;
   gap: 25px;
   flex-wrap: wrap;
+  max-height: 92%;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 main section.speakers ul.speakers-list li {
   width: 30%;
@@ -240,7 +239,8 @@ main div.text2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 100px 0px 40px;
+  padding: 100px 0px 70px;
+  text-align: center;
 }
 main div.text2 h2 {
   width: 70%;
@@ -248,7 +248,6 @@ main div.text2 h2 {
   color: #2464ec;
   font-size: 43px;
   font-weight: 700;
-  text-align: center;
   margin: 0px 0px 15px;
 }
 main div.text2 p {
@@ -257,7 +256,6 @@ main div.text2 p {
   color: #193b93;
   font-size: 20px;
   font-weight: 500;
-  text-align: center;
 }
 main ul.calendar {
   width: 100%;
@@ -323,27 +321,15 @@ main ul.calendar li ul li span {
   display: block;
   margin-bottom: 10px;
 }
-main ul.calendar li ul li span:first-child {
-  color: #2464ec;
-  font-size: 15px;
+main ul.calendar li ul li span:first-of-type {
+  color: #193b93;
+  font-size: 14px;
   font-weight: 500;
 }
-main ul.calendar li ul li span:last-child {
+main ul.calendar li ul li span:last-of-type {
   color: rgb(171, 171, 171);
   font-size: 15px;
   font-weight: 500;
-}
-main ul.calendar li ul li:not(:last-child)::after {
-  content: "";
-  display: block;
-  width: 70%;
-  height: 0.8px;
-  background-color: rgb(210, 210, 210);
-  position: absolute;
-  bottom: -20px;
-  left: 0;
-  right: 0;
-  margin: auto;
 }
 main section.sponsorship {
   width: 100%;
@@ -413,20 +399,7 @@ main section.sing-up div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-main section.sing-up div:first-child {
-  align-self: start;
-}
-main section.sing-up div:last-child {
-  align-self: start;
-  padding: 10px;
-}
-main section.sing-up div span {
-  display: block;
-  color: #193b93;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 10px;
+  align-items: start;
 }
 main section.sing-up div h2 {
   color: #193b93;
@@ -441,7 +414,16 @@ main section.sing-up div p {
   font-size: 15px;
   font-weight: 500;
 }
-main section.sing-up div form.input {
+main section.sing-up div span {
+  display: block;
+  color: #193b93;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+main section.sing-up div form {
+  width: 90%;
+  height: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -450,23 +432,34 @@ main section.sing-up div form.input {
   padding: 15px 25px;
   border-radius: 25px;
 }
-main section.sing-up div form.input input {
-  background-color: transparent;
+main section.sing-up div form input {
+  border: none;
+}
+main section.sing-up div form input::placeholder {
   color: rgb(171, 171, 171);
   font-size: 16px;
   font-weight: 500;
-  border: none;
 }
-main section.sing-up div form.input a {
-  background-color: #2464ec;
+main section.sing-up div form input:not(:placeholder-shown) {
+  color: #000;
+  font-size: 17px;
+  font-weight: 600;
+}
+main section.sing-up div form input:focus {
+  outline: none;
+}
+main section.sing-up div form a {
+  display: block;
   padding: 15px 20px;
-  border-radius: 25px;
+  background-color: #2464ec;
   color: white;
   font-size: 15px;
   font-weight: 600;
+  border: none;
+  border-radius: 25px;
 }
-main section.sing-up div form.input a:hover {
-  transform: scale(1.01);
+main section.sing-up div form a:hover {
+  transform: scale(1.03);
 }
 
 footer {

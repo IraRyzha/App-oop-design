@@ -1,4 +1,4 @@
-import { Speakers } from "./Speakers";
+import { Speakers } from "./Speakers"; 
 
 export default class SpeakersSection2 extends Speakers {
     constructor(url, speakersListClass) {
@@ -20,7 +20,6 @@ export default class SpeakersSection2 extends Speakers {
                 <span>${speakers[i].university}</span>
                 <span>${speakers[i].ip}</span>
             `;
-            console.log(speakersItem)
             speakersList.append(speakersItem);
         }
     }

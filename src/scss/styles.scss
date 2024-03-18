@@ -1,4 +1,4 @@
-@use 'config' as *;
+@use 'config' as *; 
  
 
 body {
@@ -6,7 +6,6 @@ body {
     padding: 0;
     @include set-size(100%, auto);
     font-family: Arial, Helvetica, sans-serif;
-    position: relative;
 }
 ul {
     list-style-type: none;
@@ -39,26 +38,15 @@ header {
             @include set-size(100%, auto);
             @include flex-container(row, space-between, center);
             padding: 25px 0px;
-
             li {
                 img {
                     height: 45px;
                 }
-        
                 span.current-date {
                     @include text-properties($main-blue, 13px, 300);
                 }
-        
                 a.get-tickets {
-                    display: block;
-                    padding: 15px 20px;
-                    background-color: $main-blue;
-                    @include text-properties($white, 15px, 600);
-                    border: none;
-                    border-radius: 25px;
-                    &:hover {
-                        transform: scale(1.03);
-                    }
+                    @include main-button();
                 }
             }
         }
@@ -66,16 +54,14 @@ header {
 
     div.title {
         @include set-size(100%, auto);
-        padding: 110px 0px;
         @include flex-container(column, center, center);
-
+        padding: 110px 0px;
         h1 {
             width: 65%;
             @include text-properties($main-blue, 69px, 800);
             line-height: 78px;
             margin: 0px 0px 45px;
         }
-
         ul.statistics {
             @include set-size(65%, auto);
             @include flex-container(row, null, center);
@@ -98,7 +84,6 @@ main {
     div.text {
         @include set-size(45%, auto);
         padding: 35px 0px 65px;
-        
         p {
             @include text-properties($dark-blue, 22px, 500);
         }
@@ -108,7 +93,6 @@ main {
         @include set-size(100%, auto);
         @include flex-container(row, space-between, center);
         border: 2px dotted black;
-
         aside.mini-calendar {
             @include set-size(20%, auto);
             align-self: flex-start;
@@ -128,13 +112,10 @@ main {
                         content: '';
                         position: absolute;
                         top: 0;
-                        left: -4px;
+                        left: -3px;
                         @include set-size(8px, 8px);
                         background-color: $gray;
-                        transform: rotate(90deg);
-                    }
-                    &:first-child::after {
-                        color: $main-blue;
+                        transform: rotate(180deg);
                     }
                     &:first-of-type span {
                         color: $main-blue;
@@ -153,7 +134,9 @@ main {
             @include set-size(78%, auto);
             @include flex-container(row, flex-end, center, 25px);
             flex-wrap: wrap;
-
+            max-height: 92%;
+            overflow-y: auto;  
+            scrollbar-width: none; 
             li {
                 @include set-size(30%, auto);
                 margin-bottom: 10px;
@@ -186,17 +169,16 @@ main {
     div.text2 {
         @include set-size(100%, auto);
         @include flex-container(column, center, center);
-        padding: 100px 0px 40px;
+        padding: 100px 0px 70px;
+        text-align: center;
         h2 {
             @include set-size(70%, auto);
             @include text-properties($main-blue, 43px, 700);
-            text-align: center;
             margin: 0px 0px 15px;
         }
         p {
             @include set-size(60%, auto);
             @include text-properties($dark-blue, 20px, 500);
-            text-align: center;
         }
     }
 
@@ -205,7 +187,6 @@ main {
         @include flex-container(row, space-between, flex-start, 20px);
         position: relative;
         padding: 30px 0px;
-
         div.background-area {
             @include background-area();
             top: 0;
@@ -214,19 +195,16 @@ main {
         }
         li {
             @include set-size(32%, auto);
-
             h3 {
                 @include text-properties($dark-blue, 31px, 700);
             }
             p {
                 @include text-properties($dark-blue, 15px, 500);
             }
-
             ul {
                 @include set-size(100%, auto);
                 @include flex-container(column, center, center);
                 background-color: rgba($white, .5);
-
                 li {
                     @include set-size(70%, auto);
                     position: relative;
@@ -238,23 +216,12 @@ main {
                     span {
                         display: block;
                         margin-bottom: 10px;
-                        &:first-child {
-                            @include text-properties($main-blue, 15px, 500);
+                        &:first-of-type {
+                            @include text-properties($dark-blue, 14px, 500);
                         }
-                        &:last-child {
+                        &:last-of-type {
                             @include text-properties($gray, 15px, 500);
                         }
-                    }
-                    &:not(:last-child)::after {
-                        content: '';
-                        display: block;
-                        @include set-size(70%, .8px);
-                        background-color: $light-gray;
-                        position: absolute;
-                        bottom: -20px;
-                        left: 0;
-                        right: 0;
-                        margin: auto;
                     }
                 }
             }
@@ -277,7 +244,6 @@ main {
             flex-wrap: wrap;
             li {
                 @include set-size(30%, auto);
-
             }
         }
     }
@@ -301,21 +267,7 @@ main {
         }
         div {
             @include set-size(35%, auto);
-            @include flex-container(column, center);
-
-            &:first-child {
-                align-self: start;
-            }
-            &:last-child {
-                align-self: start;
-                padding: 10px;
-            }
-            span {
-                display: block;
-                @include text-properties($dark-blue, 14px, 600);
-                margin-bottom: 10px
-            }
-
+            @include flex-container(column, center, start);
             h2 {
                 @include text-properties($dark-blue, 43px, 700);
                 margin: 0px 0px 15px
@@ -324,25 +276,31 @@ main {
                 @include set-size(80%, auto);
                 @include text-properties($dark-blue, 15px, 500);
             }
-
-            form.input {
+            span {
+                display: block;
+                @include text-properties($dark-blue, 14px, 600);
+                margin-bottom: 10px
+            }
+            form {
+                @include set-size(90%, auto);
                 @include flex-container(row, space-between, center);
                 background-color: $white;
                 padding: 15px 25px;
                 border-radius: 25px;
                 input {
-                    background-color: transparent;
-                    @include text-properties($gray, 16px, 500);
                     border: none;
+                    &::placeholder {
+                        @include text-properties($gray, 16px, 500);
+                    }
+                    &:not(:placeholder-shown) {
+                        @include text-properties($black, 17px, 600);
+                    }
+                    &:focus {
+                        outline: none;
+                    }
                 }
                 a {
-                    background-color: $main-blue;
-                    padding: 15px 20px;
-                    border-radius: 25px;
-                    @include text-properties($white, 15px, 600);
-                    &:hover {
-                        transform: scale(1.01);
-                    }
+                    @include main-button();
                 }
             }
         }

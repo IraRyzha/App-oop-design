@@ -1,0 +1,483 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+header div.background-area {
+  width: 140%;
+  height: 100%;
+  position: absolute;
+  z-index: -100;
+  background-color: #eef2fe;
+  background-image: url(../images/background.6c3571e0.jpg);
+  background-repeat: no-repeat;
+  background-size: 700px;
+  box-shadow: 1px 20px 120px 110px rgba(238, 242, 254, 0.9);
+  top: 0;
+  left: -20%;
+  transform: scaleX(-1);
+  background-position: top -41px right -151px;
+}
+header nav {
+  width: 100%;
+  height: auto;
+}
+header nav ul {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0px;
+}
+header nav ul li img {
+  height: 45px;
+}
+header nav ul li span.current-date {
+  color: #2464ec;
+  font-size: 13px;
+  font-weight: 300;
+}
+header nav ul li a.get-tickets {
+  display: block;
+  padding: 15px 20px;
+  background-color: #2464ec;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+}
+header nav ul li a.get-tickets:hover {
+  transform: scale(1.03);
+}
+header div.title {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 110px 0px;
+}
+header div.title h1 {
+  width: 65%;
+  color: #2464ec;
+  font-size: 69px;
+  font-weight: 800;
+  line-height: 78px;
+  margin: 0px 0px 45px;
+}
+header div.title ul.statistics {
+  width: 65%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header div.title ul.statistics li {
+  width: 25%;
+}
+header div.title ul.statistics li p {
+  color: #2464ec;
+  font-size: 13px;
+  font-weight: 300;
+}
+header div.title ul.statistics span {
+  color: #193b93;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+main {
+  width: 100%;
+  height: auto;
+}
+main div.text {
+  width: 45%;
+  height: auto;
+  padding: 35px 0px 65px;
+}
+main div.text p {
+  color: #193b93;
+  font-size: 22px;
+  font-weight: 500;
+}
+main section.speakers {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px dotted black;
+}
+main section.speakers aside.mini-calendar {
+  width: 20%;
+  height: auto;
+  align-self: flex-start;
+}
+main section.speakers aside.mini-calendar ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 15px;
+  position: relative;
+}
+main section.speakers aside.mini-calendar ul::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: rgb(171, 171, 171);
+}
+main section.speakers aside.mini-calendar ul li {
+  padding-left: 20px;
+  position: relative;
+}
+main section.speakers aside.mini-calendar ul li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -3px;
+  width: 8px;
+  height: 8px;
+  background-color: rgb(171, 171, 171);
+  transform: rotate(180deg);
+}
+main section.speakers aside.mini-calendar ul li:first-of-type span {
+  color: #2464ec;
+}
+main section.speakers aside.mini-calendar ul li span {
+  color: rgb(171, 171, 171);
+  font-size: 14px;
+  font-weight: 400;
+}
+main section.speakers aside.mini-calendar ul li h3 {
+  color: #193b93;
+  font-size: 16px;
+  font-weight: 600;
+}
+main section.speakers ul.speakers-list {
+  width: 78%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  max-height: 92%;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+main section.speakers ul.speakers-list li {
+  width: 30%;
+  height: auto;
+  margin-bottom: 10px;
+}
+main section.speakers ul.speakers-list li figure {
+  width: 80%;
+  height: auto;
+  margin: 0;
+}
+main section.speakers ul.speakers-list li figure img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 25px;
+}
+main section.speakers ul.speakers-list li figure figcaption {
+  width: 100%;
+  height: auto;
+}
+main section.speakers ul.speakers-list li figure figcaption h4 {
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0px 0px 5px;
+}
+main section.speakers ul.speakers-list li figure figcaption p {
+  color: rgb(171, 171, 171);
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+main div.text2 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0px 70px;
+  text-align: center;
+}
+main div.text2 h2 {
+  width: 70%;
+  height: auto;
+  color: #2464ec;
+  font-size: 43px;
+  font-weight: 700;
+  margin: 0px 0px 15px;
+}
+main div.text2 p {
+  width: 60%;
+  height: auto;
+  color: #193b93;
+  font-size: 20px;
+  font-weight: 500;
+}
+main ul.calendar {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  padding: 30px 0px;
+}
+main ul.calendar div.background-area {
+  width: 140%;
+  height: 100%;
+  position: absolute;
+  z-index: -100;
+  background-color: #eef2fe;
+  background-image: url(../images/background.6c3571e0.jpg);
+  background-repeat: no-repeat;
+  background-size: 700px;
+  box-shadow: 1px 20px 120px 110px rgba(238, 242, 254, 0.9);
+  top: 0;
+  left: -20%;
+  background-position: top -41px right -151px;
+}
+main ul.calendar li {
+  width: 32%;
+  height: auto;
+}
+main ul.calendar li h3 {
+  color: #193b93;
+  font-size: 31px;
+  font-weight: 700;
+}
+main ul.calendar li p {
+  color: #193b93;
+  font-size: 15px;
+  font-weight: 500;
+}
+main ul.calendar li ul {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+main ul.calendar li ul li {
+  width: 70%;
+  height: auto;
+  position: relative;
+  margin-bottom: 20px;
+  text-align: center;
+}
+main ul.calendar li ul li h4 {
+  color: #193b93;
+  font-size: 16px;
+  font-weight: 600;
+}
+main ul.calendar li ul li span {
+  display: block;
+  margin-bottom: 10px;
+}
+main ul.calendar li ul li span:first-of-type {
+  color: #193b93;
+  font-size: 14px;
+  font-weight: 500;
+}
+main ul.calendar li ul li span:last-of-type {
+  color: rgb(171, 171, 171);
+  font-size: 15px;
+  font-weight: 500;
+}
+main section.sponsorship {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 100px 0px;
+}
+main section.sponsorship h2 {
+  width: 65%;
+  height: auto;
+  color: #193b93;
+  font-size: 43px;
+  font-weight: 700;
+  margin: 0px 0px 65px;
+}
+main section.sponsorship ul {
+  width: 70%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+main section.sponsorship ul li {
+  width: 30%;
+  height: auto;
+}
+main section.sing-up {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  padding: 120px 0px;
+  border: 8px solid white;
+  border-radius: 25px;
+}
+main section.sing-up div.background-area {
+  width: 140%;
+  height: 100%;
+  position: absolute;
+  z-index: -100;
+  background-color: #eef2fe;
+  background-image: url(../images/background.6c3571e0.jpg);
+  background-repeat: no-repeat;
+  background-size: 700px;
+  box-shadow: 1px 20px 120px 110px rgba(238, 242, 254, 0.9);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-position: top -485px right 290px;
+  box-shadow: none;
+}
+main section.sing-up div {
+  width: 35%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+main section.sing-up div h2 {
+  color: #193b93;
+  font-size: 43px;
+  font-weight: 700;
+  margin: 0px 0px 15px;
+}
+main section.sing-up div p {
+  width: 80%;
+  height: auto;
+  color: #193b93;
+  font-size: 15px;
+  font-weight: 500;
+}
+main section.sing-up div span {
+  display: block;
+  color: #193b93;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+main section.sing-up div form {
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 15px 25px;
+  border-radius: 25px;
+}
+main section.sing-up div form input {
+  border: none;
+}
+main section.sing-up div form input::placeholder {
+  color: rgb(171, 171, 171);
+  font-size: 16px;
+  font-weight: 500;
+}
+main section.sing-up div form input:not(:placeholder-shown) {
+  color: #000;
+  font-size: 17px;
+  font-weight: 600;
+}
+main section.sing-up div form input:focus {
+  outline: none;
+}
+main section.sing-up div form a {
+  display: block;
+  padding: 15px 20px;
+  background-color: #2464ec;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+}
+main section.sing-up div form a:hover {
+  transform: scale(1.03);
+}
+
+footer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 65px 0px 47px;
+}
+footer img {
+  height: 45px;
+}
+footer span {
+  color: rgb(171, 171, 171);
+  font-size: 13px;
+  font-weight: 300;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,51 @@
+@use 'variables' as *;
+
+@mixin set-size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin flex-container($direction: null, $justify: null, $align: null, $gap: null) {
+    display: flex;
+    @if $direction != null {
+        flex-direction: $direction;
+    }
+    @if $justify != null {
+        justify-content: $justify;
+    }
+    @if $direction != null {
+        align-items: $align;
+    }
+    @if $gap != null {
+        gap: $gap;
+    }
+}
+
+@mixin text-properties($color, $font-size, $font-weight) {
+    color: $color;
+    font-size: $font-size;
+    font-weight: $font-weight;
+}
+
+@mixin main-button() {
+    display: block;
+    padding: 15px 20px;
+    background-color: $main-blue;
+    @include text-properties($white, 15px, 600);
+    border: none;
+    border-radius: 25px;
+    &:hover {
+        transform: scale(1.03);
+    }
+}
+
+@mixin background-area() {
+    @include set-size(140%, 100%);
+    position: absolute;
+    z-index: -100;
+    background-color: $background-area;
+    background-image: url(../images/background.6c3571e0.jpg);
+    background-repeat: no-repeat;
+    background-size: 700px;
+    box-shadow: 1px 20px 120px 110px rgba($background-area, .9);
+}

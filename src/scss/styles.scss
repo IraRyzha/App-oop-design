@@ -1,0 +1,322 @@
+@use 'config' as *; 
+ 
+
+body {
+    margin: 0;
+    padding: 0;
+    @include set-size(100%, auto);
+    font-family: Arial, Helvetica, sans-serif;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+.container {
+    @include set-size(100%, auto);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    @include set-size(100%, auto);
+    position: relative;
+
+    div.background-area {
+        @include background-area();
+        top: 0;
+        left: -20%;
+        transform: scaleX(-1);
+        background-position: top -41px right -151px;
+    }
+    nav {
+        @include set-size(100%, auto);
+        ul {
+            @include set-size(100%, auto);
+            @include flex-container(row, space-between, center);
+            padding: 25px 0px;
+            li {
+                img {
+                    height: 45px;
+                }
+                span.current-date {
+                    @include text-properties($main-blue, 13px, 300);
+                }
+                a.get-tickets {
+                    @include main-button();
+                }
+            }
+        }
+    }
+
+    div.title {
+        @include set-size(100%, auto);
+        @include flex-container(column, center, center);
+        padding: 110px 0px;
+        h1 {
+            width: 65%;
+            @include text-properties($main-blue, 69px, 800);
+            line-height: 78px;
+            margin: 0px 0px 45px;
+        }
+        ul.statistics {
+            @include set-size(65%, auto);
+            @include flex-container(row, null, center);
+            li {
+                width: 25%;
+                p {
+                    @include text-properties($main-blue, 13px, 300);
+                }
+                }
+                span {
+                    @include text-properties($dark-blue, 25px, 600);
+            }
+        }
+    }
+}
+
+main {
+    @include set-size(100%, auto);
+
+    div.text {
+        @include set-size(45%, auto);
+        padding: 35px 0px 65px;
+        p {
+            @include text-properties($dark-blue, 22px, 500);
+        }
+    }
+
+    section.speakers {
+        @include set-size(100%, auto);
+        @include flex-container(row, space-between, center);
+        border: 2px dotted black;
+        aside.mini-calendar {
+            @include set-size(20%, auto);
+            align-self: flex-start;
+            ul {
+                @include flex-container(column, start, start, 15px);
+                position: relative;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    @include set-size(2px, 100%);
+                    background-color: $gray;
+                }
+                li {
+                    padding-left: 20px;
+                    position: relative;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: -3px;
+                        @include set-size(8px, 8px);
+                        background-color: $gray;
+                        transform: rotate(180deg);
+                    }
+                    &:first-of-type span {
+                        color: $main-blue;
+                    }
+                    span {
+                        @include text-properties($gray, 14px, 400);
+                    }
+                    h3 {
+                        @include text-properties($dark-blue, 16px, 600);
+                    }
+                }
+            }
+        }
+
+        ul.speakers-list {
+            @include set-size(78%, auto);
+            @include flex-container(row, flex-end, center, 25px);
+            flex-wrap: wrap;
+            max-height: 92%;
+            overflow-y: auto;  
+            scrollbar-width: none; 
+            li {
+                @include set-size(30%, auto);
+                margin-bottom: 10px;
+                figure {
+                    @include set-size(80%, auto);
+                    margin: 0;
+                    img {
+                        @include set-size(100%, auto);
+                        margin-bottom: 20px;
+                        border-radius: 25px;
+                    }
+                    figcaption {
+                        @include set-size(100%, auto);
+                        h4 {
+                            @include text-properties($black, 16px, 600);
+                            margin: 0px 0px 5px;
+                        }
+                        p {
+                            @include text-properties($gray, 13px, 400);
+                            margin: 0;
+                            overflow: hidden;
+                            white-space: nowrap;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    div.text2 {
+        @include set-size(100%, auto);
+        @include flex-container(column, center, center);
+        padding: 100px 0px 70px;
+        text-align: center;
+        h2 {
+            @include set-size(70%, auto);
+            @include text-properties($main-blue, 43px, 700);
+            margin: 0px 0px 15px;
+        }
+        p {
+            @include set-size(60%, auto);
+            @include text-properties($dark-blue, 20px, 500);
+        }
+    }
+
+    ul.calendar { 
+        @include set-size(100%, auto);
+        @include flex-container(row, space-between, flex-start, 20px);
+        position: relative;
+        padding: 30px 0px;
+        div.background-area {
+            @include background-area();
+            top: 0;
+            left: -20%;
+            background-position: top -41px right -151px;
+        }
+        li {
+            @include set-size(32%, auto);
+            h3 {
+                @include text-properties($dark-blue, 31px, 700);
+            }
+            p {
+                @include text-properties($dark-blue, 15px, 500);
+            }
+            ul {
+                @include set-size(100%, auto);
+                @include flex-container(column, center, center);
+                background-color: rgba($white, .5);
+                li {
+                    @include set-size(70%, auto);
+                    position: relative;
+                    margin-bottom: 20px;
+                    text-align: center;
+                    h4 {
+                        @include text-properties($dark-blue, 16px, 600);
+                    }
+                    span {
+                        display: block;
+                        margin-bottom: 10px;
+                        &:first-of-type {
+                            @include text-properties($dark-blue, 14px, 500);
+                        }
+                        &:last-of-type {
+                            @include text-properties($gray, 15px, 500);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    section.sponsorship {
+        @include set-size(100%, auto);
+        @include flex-container(column, center, center);
+        text-align: center;
+        padding: 100px 0px;
+        h2 {
+            @include set-size(65%, auto);
+            @include text-properties($dark-blue, 43px, 700);
+            margin: 0px 0px 65px
+        }
+        ul {
+            @include set-size(70%, auto);
+            @include flex-container(row, space-between, center, 25px);
+            flex-wrap: wrap;
+            li {
+                @include set-size(30%, auto);
+            }
+        }
+    }
+
+    section.sing-up {
+        @include set-size(100%, auto);
+        @include flex-container(row, center, center, 40px);
+        position: relative;
+        padding: 120px 0px;
+        border: 8px solid $white;
+        border-radius: 25px;
+
+        div.background-area {
+            @include background-area();
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-position: top -485px right 290px;
+            box-shadow: none;
+        }
+        div {
+            @include set-size(35%, auto);
+            @include flex-container(column, center, start);
+            h2 {
+                @include text-properties($dark-blue, 43px, 700);
+                margin: 0px 0px 15px
+            }
+            p {
+                @include set-size(80%, auto);
+                @include text-properties($dark-blue, 15px, 500);
+            }
+            span {
+                display: block;
+                @include text-properties($dark-blue, 14px, 600);
+                margin-bottom: 10px
+            }
+            form {
+                @include set-size(90%, auto);
+                @include flex-container(row, space-between, center);
+                background-color: $white;
+                padding: 15px 25px;
+                border-radius: 25px;
+                input {
+                    border: none;
+                    &::placeholder {
+                        @include text-properties($gray, 16px, 500);
+                    }
+                    &:not(:placeholder-shown) {
+                        @include text-properties($black, 17px, 600);
+                    }
+                    &:focus {
+                        outline: none;
+                    }
+                }
+                a {
+                    @include main-button();
+                }
+            }
+        }
+    }
+}
+
+footer {
+    @include set-size(100%, auto);
+    @include flex-container(row, space-between, center);
+    padding: 65px 0px 47px;
+    img {
+        height: 45px;
+    }
+    span {
+        @include text-properties($gray, 13px, 300);
+    }
+}
+
+
